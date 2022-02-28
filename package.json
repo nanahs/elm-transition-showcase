@@ -1,0 +1,22 @@
+{
+  "name": "vite-elm-template",
+  "author": "Lindsay Wardell",
+  "description": "A staring template for building Elm apps with Vite",
+  "version": "1.0.2",
+  "license": "MIT",
+  "scripts": {
+    "postinstall": "elm-tooling install",
+    "dev": "vite",
+    "prebuild": "elm-tooling install",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.0",
+    "elm-tooling": "^1.7.0",
+    "postcss": "^8.4.5",
+    "tailwindcss": "^3.0.2",
+    "vite": "^2.7.1",
+    "vite-plugin-elm": "^2.5.1"
+  }
+}
