@@ -4,10 +4,7 @@ import Browser
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import Html.Events exposing (..)
-
-
-
--- import Transitions
+import Transitions
 
 
 type alias Model =
@@ -40,19 +37,18 @@ view model =
             ]
             [ text "Toggle" ]
         , myView
-
-        -- |> Transitions.make
-        --     { isShowing = model.isShowing
-        --     , enter = "transition-opacity duration-500"
-        --     , enterFrom = "opacity-0"
-        --     , enterTo = "opacity-100"
-        --     , onEnter = Just TransitionIncrease
-        --     , leave = "transition-opacity duration-500"
-        --     , leaveFrom = "opacity-100"
-        --     , leaveTo = "opacity-0"
-        --     , onLeave = Just TransitionIncrease
-        --     }
-        -- |> Transitions.view
+            |> Transitions.make
+                { isShowing = model.isShowing
+                , enter = "transition-opacity duration-500"
+                , enterFrom = "opacity-0"
+                , enterTo = "opacity-100"
+                , onEnter = Just TransitionIncrease
+                , leave = "transition-opacity duration-500"
+                , leaveFrom = "opacity-100"
+                , leaveTo = "opacity-0"
+                , onLeave = Just TransitionIncrease
+                }
+            |> Transitions.view
         ]
 
 
