@@ -4,7 +4,10 @@ import Browser
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import Html.Events exposing (..)
-import Transitions
+
+
+
+-- import Transitions
 
 
 type alias Model =
@@ -36,23 +39,30 @@ view model =
             , class "px-2 py-1 bg-gray-300 rounded-md"
             ]
             [ text "Toggle" ]
-        , img
-            [ src "/logo.png"
-            , style "width" "300px"
-            ]
-            []
-            |> Transitions.transitions
-            |> Transitions.withIsShowing model.isShowing
-            |> Transitions.withEnter "transition-opacity duration-500"
-            |> Transitions.withEnterFrom "opacity-0"
-            |> Transitions.withEnterTo "opacity-100"
-            |> Transitions.withOnEnter TransitionIncrease
-            |> Transitions.withLeave "transition-opacity duration-500"
-            |> Transitions.withLeaveFrom "opacity-100"
-            |> Transitions.withLeaveTo "opacity-0"
-            |> Transitions.withOnLeave TransitionIncrease
-            |> Transitions.view
+        , myView
+
+        -- |> Transitions.make
+        --     { isShowing = model.isShowing
+        --     , enter = "transition-opacity duration-500"
+        --     , enterFrom = "opacity-0"
+        --     , enterTo = "opacity-100"
+        --     , onEnter = Just TransitionIncrease
+        --     , leave = "transition-opacity duration-500"
+        --     , leaveFrom = "opacity-100"
+        --     , leaveTo = "opacity-0"
+        --     , onLeave = Just TransitionIncrease
+        --     }
+        -- |> Transitions.view
         ]
+
+
+myView : Html Msg
+myView =
+    img
+        [ src "/logo.png"
+        , style "width" "300px"
+        ]
+        []
 
 
 type Msg
